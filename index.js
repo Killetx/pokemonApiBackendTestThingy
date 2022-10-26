@@ -1,13 +1,26 @@
-console.log("e");
 const { default: axios } = require('axios');
 var express = require('express');
 var app = express();
+const cors = require('cors');
+const { request } = require('express');
+
+const port = process.env.PORT || 8080;
+
+const corsoptions = {
+    origin: ["*"],
+    credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+};
+
+app.use(cors(corsoptions));
+
+
+
 app.get('/', (req, res) => {
-
     res.send("e");
-    
-
 });
+
+
 app.get('/api/:id', (req, res) => {
     const id = req.params.id;
 
@@ -25,10 +38,6 @@ app.get('/api/:id', (req, res) => {
 
 
 
-
-
-
-
-
-
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`server listening on port ${port}`)
+});
