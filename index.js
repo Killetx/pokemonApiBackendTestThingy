@@ -42,5 +42,3 @@ app.listen(port, () => {
     console.log(`server listening on port ${port}`)
 });
 
-//https://pokemonapithingy.onrender.com/api/squirtle
-//https://dashboard.render.com/web/srv-cdcerrg2i3msb944omug/deploys/dep-cdcers82i3msb944on6g
